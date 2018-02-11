@@ -15,7 +15,7 @@ RUN go get github.com/lukasmartinelli/nigit
 RUN rm $GOPATH/bin/nigit
 
 
-ADD *.sh /dl
+ADD *.sh /dl/
 RUN chmod 777 /dl/*.sh
 
 ADD entrypoint /entrypoint.sh
