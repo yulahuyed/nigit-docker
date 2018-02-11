@@ -15,7 +15,9 @@ RUN rm $GOPATH/bin/nigit
 
 
 ADD dl.sh /dl/dl.sh
+ADD cmd.sh /dl/cmd.sh
 RUN chmod 777 /dl/dl.sh
+RUN chmod 777 /dl/cmd.sh
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod 777 /entrypoint.sh 
