@@ -6,7 +6,7 @@ then
 else
   if [[ $DOWN =~ "youtu.*be" ]]
   then
-  youtube-dl -f bestvideo+bestaudio/best -o /dl/downloads/%(title)s-%(id)s.%(ext)s $DOWN
+  youtube-dl -f bestvideo+bestaudio/best -o "/dl/downloads/%(title)s-%(id)s.%(ext)s" $DOWN
   else
   wget $DOWN
   fi
