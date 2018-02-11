@@ -1,4 +1,4 @@
 #!/bin/sh
 
-$COMMAND > temp.sh
+echo "$COMMAND" > temp.sh
 bash temp.sh
