@@ -11,6 +11,7 @@ RUN mkdir -p /dl/downloads
 RUN go get "github.com/codegangsta/cli"
 RUN go get "github.com/op/go-logging"
 RUN go get github.com/lukasmartinelli/nigit
+RUN rm $GOPATH/bin/nigit
 
 
 ADD dl.sh /dl/dl.sh
