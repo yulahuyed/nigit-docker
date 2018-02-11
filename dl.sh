@@ -12,5 +12,8 @@ else
   fi
 fi
 
+if [ "${RCLONE_CONFIG}" ]
+then
 bash /dl/upload.sh
-  
+fi
+ 
