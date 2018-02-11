@@ -1,6 +1,6 @@
 FROM golang:1.9.4-alpine
 
-RUN apk --no-cache add ca-certificates expect git youtube-dl ffmpeg curl wget
+RUN apk --no-cache add ca-certificates expect git youtube-dl ffmpeg curl wget bash
 RUN wget https://github.com/xzl2021/aria2-static-builds-with-128-threads/releases/download/v1.32.0/aria2-1.32.0-linux-gnu-64bit-build1.tar.bz2
 RUN tar jxvf aria2-1.32.0-linux-gnu-64bit-build1.tar.bz2
 RUN mv ./aria2-1.32.0-linux-gnu-64bit-build1/aria2c /usr/local/bin
