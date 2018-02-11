@@ -8,6 +8,7 @@ RUN mv ./aria2-1.32.0-linux-gnu-64bit-build1/ca-certificates.crt /usr/local/bin
 RUN mv ./aria2-1.32.0-linux-gnu-64bit-build1/man-aria2c /usr/local/bin
 RUN rm -rf aria2-1.32.0-linux-gnu-64bit-build1
 RUN mkdir -p /dl/downloads
+RUN mkdir -p /dl/temp
 RUN go get "github.com/codegangsta/cli"
 RUN go get "github.com/op/go-logging"
 RUN go get github.com/lukasmartinelli/nigit
