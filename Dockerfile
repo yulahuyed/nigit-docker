@@ -15,12 +15,10 @@ RUN go get github.com/lukasmartinelli/nigit
 RUN rm $GOPATH/bin/nigit
 
 
-ADD dl.sh /dl/dl.sh
-ADD cmd.sh /dl/cmd.sh
-RUN chmod 777 /dl/dl.sh
-RUN chmod 777 /dl/cmd.sh
+ADD *.sh /dl
+RUN chmod 777 /dl/*.sh
 
-ADD entrypoint.sh /entrypoint.sh
+ADD entrypoint /entrypoint.sh
 RUN chmod 777 /entrypoint.sh 
 USER nobody
 CMD /entrypoint.sh
