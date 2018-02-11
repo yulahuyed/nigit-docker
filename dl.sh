@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [[ $DOWN =~ "aria2.+baidu" ]]
+if [[ $DOWN =~ "aria2.*baidu" ]]
 then
  nohup $DOWN > 1.log 2>&1 &
 else
