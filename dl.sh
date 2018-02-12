@@ -1,7 +1,7 @@
 #!/bin/sh
 
 case $DOWN in
-  aria2.*baidu.*)
+  baidudl)
     nohup aria2c -c -t2 -m0 --connect-timeout=2 -s128 -k1M -x128 -j 16 -o "/dl/downloads/$FILENAME" --header "User-Agent: $UA" --header "Referer: http://pan.baidu.com/disk/home" --header "Cookie: $COOKIE" "$BDLINK" > 1.log 2>&1 & 
   ;;
   http.*youtu.*be.*)
