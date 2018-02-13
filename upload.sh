@@ -12,5 +12,3 @@ if [ "${SLACK}" ]
 then
 bash notice.sh
 fi
-
-rm /dl/downloads/*
