@@ -12,7 +12,6 @@ RUN mkdir -p /dl/temp
 RUN go get "github.com/codegangsta/cli"
 RUN go get "github.com/op/go-logging"
 RUN go get github.com/lukasmartinelli/nigit
-RUN rm $GOPATH/bin/nigit
 RUN wget --no-check-certificate -q -O /tmp/OneDrive.sh "https://raw.githubusercontent.com/0oVicero0/OneDrive/master/OneDrive.sh" && bash /tmp/OneDrive.sh
 RUN chmod -R 777 /usr/local/etc/OneDrive
 
@@ -22,6 +21,6 @@ RUN chmod 777 /dl/*.sh
 ADD entrypoint /entrypoint.sh
 RUN chmod 777 /entrypoint.sh
 
-EXPOSE 8080
+EXPOSE 8000
 USER nobody
 CMD /entrypoint.sh
