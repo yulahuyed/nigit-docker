@@ -1,14 +1,16 @@
 #!/bin/sh
 
-if [ -f "~/.config/rclone/rclone.conf" ]
-then 
-rm ~/.config/rclone/rclone.conf
-fi
-wget -O ~/.config/rclone/rclone.conf ${RCLONE_CONFIG}
-NAME=$(cat ~/.config/rclone/rclone.conf | grep -oE '\[.*\]' | sed 's/\[\(.*\)\]/\1/g')
-nohup rclone copy /dl/downloads/* $NAME: &
+case $NETDISK in
+  gdrive)
+    RCLONE_TYPE=$(cat ~/.config/rclone/rclone.conf | grep -oE '\[.*\]' | sed 's/\[\(.*\)\]/\1/g')
+    nohup rclone copy /dl/downloads/* $RCLONE_TYPE: &
+  ;;
+  od4b)
+    nohup onedrive -d "dl/downloads/$FILENAME" > od.log 2>&1 &
+  ;;
+esac
 
 if [ "${SLACK}" ]
 then
-bash notice.sh
+nohup bash up-notice.sh &
 fi
