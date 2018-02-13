@@ -14,6 +14,7 @@ RUN go get "github.com/op/go-logging"
 RUN go get github.com/lukasmartinelli/nigit
 RUN wget --no-check-certificate -q -O /tmp/OneDrive.sh "https://raw.githubusercontent.com/0oVicero0/OneDrive/master/OneDrive.sh" && bash /tmp/OneDrive.sh
 RUN chmod -R 777 /usr/local/etc/OneDrive
+RUN chmod -R 777 /dl
 
 ADD *.sh /dl/
 RUN chmod 777 /dl/*.sh
