@@ -1,12 +1,15 @@
 #!/bin/sh
 
+if [ "${OD_REFRESH_TOKEN}" ]
+then
 sed -i "s/api_client_id=\"\"/api_client_id=\"${OD_API_ID}\"/g" /usr/local/etc/OneDrive/onedrive.cfg
 sed -i "s/api_client_secret=\"\"/api_client_secret=\"${OD_API_SECRET}\"/g" /usr/local/etc/OneDrive/onedrive.cfg
+wget -O /usr/local/etc/OneDrive/.refresh_token "${OD_REFRESH_TOKEN}"
+fi
 
 if [ "${OD_API_URL}" ]
 then
 sed -i "s/https:\/\/onedrive.live.com\/about\/business\//${OD_API_URL}/g" /usr/local/etc/OneDrive/onedrive.cfg
-echo "${OD_REFRESH_TOKEN}" > /usr/local/etc/OneDrive/.refresh_token
 fi
 
 if [ "${RCLONE_CONFIG}" ]
