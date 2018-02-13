@@ -5,8 +5,7 @@ sleep 5
 DL_LOGS=$(tail -n 10 /dl/1.log)
 case ${DL_LOGS} in
   .*OK.*|.*completed.*|.*save.*|.*100%.*)
-    mv /dl/temp/* /dl/downloads/
-    bash /dl/upload.sh
+    nohup bash /dl/upload.sh &
     exit 0
   ;;
   .*error.*|.*ERROR.*) 
