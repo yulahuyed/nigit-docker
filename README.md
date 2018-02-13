@@ -13,3 +13,5 @@
 `$OD_API_URL` : the response link of the API of OD4B (optional)
 
 `$RCLONE_CONFIG` : the HTTP download link of the config file of Rclone
+
+`$NETDISK` : the type of netdisk used to upload the files, `gdrive` OR `od4b`
