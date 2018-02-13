@@ -20,6 +20,8 @@ ADD *.sh /dl/
 RUN chmod 777 /dl/*.sh
 
 ADD entrypoint /entrypoint.sh
-RUN chmod 777 /entrypoint.sh 
+RUN chmod 777 /entrypoint.sh
+
+EXPOSE 8080
 USER nobody
 CMD /entrypoint.sh
