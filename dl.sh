@@ -20,5 +20,5 @@ if [ "${SLACK}" ]
 then
 nohup bash /dl/dl-notice.sh &
 else
-nohup bash up-notice.sh &
+nohup bash /dl/upload.sh &
 fi
