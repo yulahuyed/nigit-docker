@@ -2,10 +2,12 @@
 
 case $DOWN in
   baidudl)
-    nohup aria2c -c -t2 -m0 --connect-timeout=2 -s128 -k1M -x128 -j 16 -o "/dl/downloads/$FILENAME" --header "User-Agent: $UA" --header "Referer: http://pan.baidu.com/disk/home" --header "Cookie: $COOKIE" "$BDLINK" --on-download-complete=/dl/OD-upload.sh > 1.log 2>&1 & 
+    echo "BDDL" > type.txt 
+    nohup aria2c -c -t2 -m0 --connect-timeout=2 -s128 -k1M -x128 -j 16 -o "/dl/downloads/$FILENAME" --header "User-Agent: $UA" --header "Referer: http://pan.baidu.com/disk/home" --header "Cookie: $COOKIE" "$BDLINK" --on-download-complete=/dl/dl-notice.sh > 1.log 2>&1 & 
   ;;
   http.*youtu.*be.*)
     nohup youtube-dl -f bestvideo+bestaudio/best -o "/dl/temp/%(title)s-%(id)s.%(ext)s" "$DOWN" > 1.log 2>&1 &
+    echo "Y2B" > type.txt
     nohup bash /dl/dl-notice.sh &
   ;;
   bdlink) 
